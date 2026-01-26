@@ -7,9 +7,9 @@ this.magnitude = magnitude;
 this.phase = phase;
 }
 
-Signal add(Signal other){
-double newmagnitude = this.magnitude+other.magnitude;
-double newphase = this.phase+other.magnitude;
+Signal add(Signal other){//We passed the other signal
+double newmagnitude = this.magnitude+other.magnitude;//current object magnitude and other object magnitude
+double newphase = this.phase+other.phase;
 
 return new Signal(newmagnitude,newphase);
 }
