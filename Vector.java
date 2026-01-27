@@ -1,19 +1,38 @@
 public class Vector {
-    double x;
-    double y;
-    Vector(double x, double y){
-       this.x = x;
+   private double x;
+   private double y; // Encapsulation = data hiding + cotrolled access + validation
+
+
+   public Vector(double x, double y){
+       this.x = x;// we can directly pass Setx and sety
        this.y = y;
 
     }
+public double getX(){ // getters read the value -> methoda that returns private field
+return x;
+}
+public void setX(double x){ // setters validate the value -> methods that modify a private field (with validation)
+    this.x = x;
+}
+
+public double getY(){
+    return y;
+}
+public void setY(double y){
+this.y = y;
+
+}
+
 Vector add(Vector other){
-    double newx = this.x+other.x;
-    double newy = this.y+other.y;
+    double newx = this.getX()+other.getX();
+    double newy = this.getY()+other.getY();
      return new Vector(newx,newy);
 }
+
 Vector Scale(double factor){
 
- double newx = this.x*factor;
+ double newx = this.getX()*factor;
+ double newy = this.getY()*factor;
 return new Vector(newx,y);
 }
 
@@ -25,7 +44,12 @@ void display(){
 public static void main(String[] args) {
     Vector v1 =  new Vector(3.4, 6.9);
     Vector v2 = new Vector(2.3, 4.5);
+v1.setX(3.4);
+v1.setY(6.9);
+ 
 
+v2.setX(2.3);
+v2.setY(4.5);
     System.out.println("The object 1:");
     v1.display();
     System.out.println("The object 2:");
